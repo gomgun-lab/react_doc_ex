@@ -6,7 +6,9 @@ class ThemedButton extends Component {
     let props = this.props;
     let theme = this.context;
     return (
-      <button {...props} style={{ backgroundColor: theme.background }}></button>
+      <button {...props} style={{ backgroundColor: theme.background }}>
+        Button
+      </button>
     );
   }
 }
