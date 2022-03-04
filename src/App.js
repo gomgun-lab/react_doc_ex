@@ -1,6 +1,7 @@
 import { ThemeContext, themes } from "./component/context/ThemeContext";
 import ThemedButton from "./component/context/ThemedButton";
 import Toolbar from "./component/context/Toolbar";
+import ThemeTogglerButton from "./component/context/ThemeTogglerButton";
 import React from "react";
 
 class App extends React.Component {
@@ -8,6 +9,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       theme: themes.light,
+      toggleTheme: this.toggleTheme,
     };
 
     this.toggleTheme = () => {
@@ -24,9 +26,10 @@ class App extends React.Component {
     return (
       <>
         <ThemeContext.Provider value={this.state.theme}>
-          <Toolbar changeTheme={this.toggleTheme} />
+          {/* <Toolbar changeTheme={this.toggleTheme} /> */}
+          <ThemeTogglerButton />
         </ThemeContext.Provider>
-        <ThemedButton />
+        {/* <ThemedButton /> */}
       </>
     );
   }
